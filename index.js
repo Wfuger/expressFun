@@ -24,7 +24,7 @@ res.send(buffer);
 
 app.get('/:username', (req, res) => {
   let username = req.params.username
-  res.send(username)
+  res.json(username)
 });
 
 
