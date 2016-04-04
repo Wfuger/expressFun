@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
 res.send(buffer);
 })
 
+app.get('/:username', (req, res) => {
+  let username = req.params.username
+  res.send(username)
+})
+
 
 const server = app.listen(5000, () => {
   console.log("Server running at http://localhost:" + server.address().port);
