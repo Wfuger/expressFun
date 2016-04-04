@@ -18,14 +18,14 @@ app.get('/', (req, res) => {
   let buffer = ''
   users.forEach((user) => {
     buffer += '<a href="/' + user.username + '">' + user.name.full + '</a><br>'
-  })
+  });
 res.send(buffer);
-})
+});
 
 app.get('/:username', (req, res) => {
   let username = req.params.username
   res.send(username)
-})
+});
 
 
 const server = app.listen(5000, () => {
