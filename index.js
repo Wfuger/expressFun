@@ -14,12 +14,11 @@ fs.readFile('users.json', {encoding: 'utf8'}, function(err, data){
   });
 });
 
+app.set('views', './views')
+app.set('view engine', 'hbs')
+
 app.get('/', (req, res) => {
-  let buffer = ''
-  users.forEach((user) => {
-    buffer += '<a href="/' + user.username + '">' + user.name.full + '</a><br>'
-  });
-res.send(buffer);
+  res.render('index', { users: users });
 });
 
 app.get('/:username', (req, res) => {
